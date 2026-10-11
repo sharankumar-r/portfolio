@@ -1,308 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Sharan Kumar R — Full-Stack Developer & Cybersecurity</title>
-  <meta name="description" content="Personal developer portfolio of Sharan Kumar R — building modern full-stack web applications with Next.js 14, TypeScript & Supabase, high-performance Python utilities, and cybersecurity tools.">
-  <meta name="color-scheme" content="dark">
-  <meta property="og:title" content="Sharan Kumar R — Portfolio">
-  <meta property="og:description" content="Full-Stack Development & Cybersecurity: Next.js 14, Python, Supabase, Networking, and Cryptography.">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sharan Kumar R — Computer Science Student</title>
+<meta name="description" content="Portfolio of Sharan Kumar R, Computer Science & Engineering undergraduate focused on full-stack development and cybersecurity.">
+<meta name="color-scheme" content="dark">
+<style>
+:root{
+  --bg:#0a0a0a; --fg:#f5f5f5; --muted:#a3a3a3; --border:#262626; --border-hover:#525252;--accent:#00e58f;--accent-dim:rgba(0,229,143,.1);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wrap:880px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:2rem;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:1.0625rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+a{color:inherit;text-decoration-color:var(--border-hover);text-underline-offset:.25em;transition:text-decoration-color .2s,color .2s}
+a:hover{text-decoration-color:var(--fg)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--fg);color:var(--bg);padding:.5rem 1rem}
+.skip:focus{left:1rem;top:1rem;z-index:10}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.5rem}
+header.top{padding:1.5rem 0;border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font-family:var(--serif);text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem}
+nav a:hover{color:var(--fg)}
+.hero{padding:clamp(4rem,12vw,8rem) 0 clamp(3rem,8vw,6rem)}
+.eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 1.25rem}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,8vw,4.5rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 1.25rem}
+.lead{font-size:clamp(1.1rem,2.5vw,1.3rem);color:var(--muted);margin:0 0 2.5rem;max-width:34em}
+.links{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;margin:0;padding:0}
+.links a{display:inline-block;padding:.6rem 1.1rem;border:1px solid var(--border);border-radius:6px;text-decoration:none;font-size:.95rem;transition:border-color .2s}
+.links a:hover{border-color:var(--border-hover)}
+section{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--border)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,4vw,2rem);margin:0 0 2rem;letter-spacing:-.01em}
+h3{font-size:1.1rem;font-weight:600;margin:0 0 .25rem}
+p{margin:0 0 1rem}
+.muted{color:var(--muted)}
+.meta{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.edu{margin-top:2.5rem}
+.skills{display:grid;gap:1.75rem 2.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:0}
+.skills dt{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.skills dd{margin:0}
+.projects{display:grid;gap:1.5rem}
+.card{border:1px solid var(--border);border-radius:8px;padding:1.75rem;transition:border-color .2s}
+.card:hover,.card:focus-within{border-color:var(--border-hover)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.4rem}
+.card .sub{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+.card ul.points{margin:0 0 1.25rem;padding-left:1.1rem;color:#d4d4d4}
+.card ul.points li{margin-bottom:.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0 0 1.25rem;padding:0}
+.tags li{border:1px solid var(--border);border-radius:4px;padding:.15rem .55rem;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.card a.repo{font-size:.95rem}
+.highlights{list-style:none;margin:0;padding:0}
+.highlights li{padding:1rem 0;border-bottom:1px solid var(--border)}
+.highlights li:first-child{padding-top:0}
+.highlights li:last-child{border-bottom:0}
+footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font-size:.85rem}
+@media (max-width:480px){.card{padding:1.25rem}nav ul{gap:1rem}}
+/* ---- Cyber theme ---- */
+body{background:transparent;counter-reset:s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 50% 0,#000 15%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 0,#000 15%,transparent 70%)}
+::selection{background:var(--accent);color:#000}
+nav a:hover{color:var(--accent)}
+.brand::before{content:"> ";color:var(--accent)}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-80px;left:50%;width:640px;max-width:100%;height:420px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--accent-dim),transparent);pointer-events:none;z-index:-1}
+.hero .wrap{max-width:1040px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3rem;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.eyebrow{color:var(--accent)}
+.eyebrow::before{content:"// "}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.links li:first-child a{background:var(--accent);border-color:var(--accent);color:#04120b;font-weight:600}
+.links li:first-child a:hover{background:transparent;color:var(--accent)}
+.term{border:1px solid var(--border);border-radius:10px;background:rgba(8,8,8,.9);box-shadow:0 0 0 1px rgba(0,229,143,.08),0 24px 70px rgba(0,229,143,.08);overflow:hidden;font-family:var(--mono);font-size:.82rem}
+.term-bar{display:flex;align-items:center;gap:.4rem;padding:.6rem .9rem;border-bottom:1px solid var(--border);color:var(--muted)}
+.term-bar i{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-hover)}
+.term-bar b{margin-left:.5rem;font-weight:400;font-size:.75rem}
+.term pre{margin:0;padding:1rem 1.1rem;min-height:16rem;white-space:pre-wrap;color:#d4d4d4;line-height:1.7;font:inherit;line-height:1.7}
+.term .p,.term .ok{color:var(--accent)}
+.caret{display:inline-block;width:.55em;height:1em;background:var(--accent);vertical-align:-.15em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}}
+section h2{display:flex;align-items:baseline}
+section h2::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:.8rem;color:var(--accent);margin-right:.9rem;letter-spacing:.08em}
+section h2::after{content:"";flex:1;height:1px;background:var(--border);margin-left:1.25rem;align-self:center}
+.skills>div{border:1px solid var(--border);border-radius:8px;padding:1.25rem;background:rgba(255,255,255,.02);transition:border-color .2s}
+.skills>div:hover{border-color:rgba(0,229,143,.4)}
+.skills dt{color:var(--accent)}
+.skills dd .tags{margin:0}
+.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+.card::before{content:"";position:absolute;left:-1px;top:1.75rem;width:2px;height:2.5rem;background:var(--accent)}
+.card:hover,.card:focus-within{border-color:rgba(0,229,143,.45);box-shadow:0 0 36px rgba(0,229,143,.08)}
+.card .sub{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+.card ul.points li::marker{color:var(--accent)}
+.tags li{color:var(--accent);border-color:rgba(0,229,143,.25);background:var(--accent-dim)}
+.card a.repo{color:var(--accent);text-decoration:none;font-family:var(--mono);font-size:.85rem}
+.card a.repo:hover{text-decoration:underline}
+.highlights h3::before{content:"[+] ";color:var(--accent);font-family:var(--mono);font-weight:400}
+.contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:start}
+.contact-form{border:1px solid var(--border);border-radius:8px;padding:1.75rem;position:relative;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);transition:border-color .2s}
+.contact-form::before{content:"";position:absolute;left:-1px;top:1.75rem;width:2px;height:2.5rem;background:var(--accent)}
+.contact-form:hover,.contact-form:focus-within{border-color:rgba(0,229,143,.45);box-shadow:0 0 36px rgba(0,229,143,.08)}
+.form-group{margin-bottom:1.25rem}
+.form-group:last-of-type{margin-bottom:1.5rem}
+.form-group label{display:block;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.form-group input,.form-group textarea{width:100%;box-sizing:border-box;padding:.75rem .9rem;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:6px;color:var(--fg);font:inherit;font-size:1rem;transition:border-color .2s,box-shadow .2s;outline:none}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted);opacity:.6}
+.form-group input:hover,.form-group textarea:hover{border-color:var(--border-hover)}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-btn{display:inline-block;padding:.7rem 1.6rem;background:var(--accent);border:1px solid var(--accent);border-radius:6px;color:#04120b;font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s;min-height:44px}
+.form-btn:hover{background:transparent;color:var(--accent)}
+.form-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (max-width:768px){.contact-layout{grid-template-columns:1fr;gap:2rem}}
+@media (max-width:480px){.contact-form{padding:1.25rem}.form-btn{width:100%}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-  <!-- Header & Navigation -->
-  <header class="top">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Sharan Kumar R</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
     <div class="wrap">
-      <a class="brand" href="#top">
-        <span class="prompt-prefix">&gt;</span>
-        <span>sharan.dev</span>
-      </a>
-      <nav aria-label="Primary Navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#learning">Experience</a></li>
-          <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- Hero Section -->
-    <div class="hero" id="top">
-      <div class="wrap">
-        <div class="hero-text">
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span>Available for SWE &amp; Cybersecurity Roles</span>
-          </div>
-          <p class="eyebrow">Computer Science &amp; Engineering Undergraduate</p>
-          <h1>Building <span class="highlight-text">Full-Stack</span> Systems &amp; Secure Utilities.</h1>
-          <p class="lead">
-            Hi, I'm <strong>Sharan Kumar R</strong>. I build fast, accessible web applications with <strong>Next.js 14, TypeScript &amp; Supabase</strong>, alongside high-performance Python network utilities and security diagnostics.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              <span>View Projects</span>
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="https://github.com/sharankumar-r" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              <span>GitHub Profile</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-            <button type="button" class="btn btn-secondary copy-email-btn" aria-label="Copy Email to clipboard">
-              <span>Copy Email</span>
-            </button>
-          </div>
-
-          <ul class="social-links" aria-label="Quick contact links">
-            <li><a href="mailto:sharankumarrno@gmail.com">sharankumarrno@gmail.com</a></li>
-            <li><a href="tel:+919663571484">+91 96635 71484</a></li>
-            <li><a href="https://github.com/sharankumar-r" target="_blank" rel="noopener">github.com/sharankumar-r</a></li>
-          </ul>
-        </div>
-
-        <!-- Interactive Terminal Simulator -->
-        <div class="term-container">
-          <div class="term" aria-label="Interactive Terminal Simulator">
-            <div class="term-bar">
-              <div class="term-dots">
-                <i></i><i></i><i></i>
-              </div>
-              <span class="term-title">sharan@portfolio:~</span>
-              <span class="term-badge">zsh</span>
-            </div>
-            <pre id="term-out" tabindex="0"></pre>
-          </div>
-          <div class="term-shortcuts">
-            <span>Quick run:</span>
-            <button type="button" class="term-btn" data-cmd="taskflow">taskflow</button>
-            <button type="button" class="term-btn" data-cmd="projects">projects</button>
-            <button type="button" class="term-btn" data-cmd="skills">skills</button>
-            <button type="button" class="term-btn" data-cmd="contact">contact</button>
-            <button type="button" class="term-btn" data-cmd="clear">clear</button>
-          </div>
-        </div>
+      <div class="hero-text">
+      <p class="eyebrow">Computer Science &amp; Engineering Undergraduate</p>
+      <h1>Sharan Kumar R</h1>
+      <p class="lead">Full-Stack Development &amp; Cybersecurity. Building backend tools, network utilities, and secure software.</p>
+      <ul class="links" aria-label="Contact links">
+        <li><a href="mailto:sharankumarrno@gmail.com">Email</a></li>
+        <li><a href="https://github.com/sharankumar-r" rel="noopener">GitHub</a></li>
+        <li><a href="tel:+919663571484">+91 96635 71484</a></li>
+      </ul>
       </div>
-
-      <!-- Quick Metrics Grid -->
-      <div class="wrap">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-value">4+</div>
-            <div class="stat-label">Production &amp; Systems Projects</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">1M+</div>
-            <div class="stat-label">Network Log Records Benchmarked</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">Next.js 14</div>
-            <div class="stat-label">Full-Stack TypeScript &amp; Supabase</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">May 2027</div>
-            <div class="stat-label">B.E. Computer Science, MVJCE</div>
-          </div>
-        </div>
+      <div class="term" aria-hidden="true">
+        <div class="term-bar"><i></i><i></i><i></i><b>sharan@terminal:~</b></div>
+        <pre id="term-out"></pre>
       </div>
     </div>
+  </div>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" aria-labelledby="projects-h">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="projects-h">
-            <span class="sec-num">01</span>
-            <span>Featured Projects</span>
-            <span class="sec-rule"></span>
-          </h2>
-          <p class="section-desc">Production-grade applications across full-stack web architecture, concurrent networking, and applied cryptography.</p>
-        </div>
-
-        <!-- Project Filtering Tabs -->
-        <div class="project-filters" role="group" aria-label="Filter projects by category">
-          <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
-          <button type="button" class="filter-btn" data-filter="fullstack">Full-Stack Web</button>
-          <button type="button" class="filter-btn" data-filter="cybersecurity">Cybersecurity &amp; Cryptography</button>
-          <button type="button" class="filter-btn" data-filter="systems">Systems &amp; Automation</button>
-        </div>
-
-        <div class="projects-grid" id="projects-list"></div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" aria-labelledby="about-h">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="about-h">
-            <span class="sec-num">02</span>
-            <span>About Me</span>
-            <span class="sec-rule"></span>
-          </h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I am a Computer Science &amp; Engineering student at <strong>MVJ College of Engineering (Bengaluru)</strong> with a strong commitment to building resilient software. My focus spans modern full-stack web applications using <strong>Next.js 14, TypeScript, Supabase, and Tailwind CSS</strong>, along with Python backend tooling, network diagnostics, and security workflows.
-            </p>
-            <p>
-              From engineering high-throughput log analysis processing over 1 million records to designing interactive web dashboards and cryptographic utilities, I thrive at the intersection of robust backend logic, sleek frontend UX, and security best practices.
-            </p>
-          </div>
-
-          <div class="edu-card">
-            <h3>Bachelor of Engineering, CSE</h3>
-            <p class="meta">MVJ College of Engineering · Bengaluru, India</p>
-            <p class="meta" style="color:var(--muted)">Expected Graduation: May 2027</p>
-            <p style="font-size:0.9rem; color:#cbd5e1; margin-top:1rem; margin-bottom:0">
-              <strong style="color:var(--fg-bright)">Core Curriculum:</strong> Data Structures &amp; Algorithms, Computer Networks, Database Management Systems (DBMS), Web Technologies, Operating Systems, Web Security Fundamentals.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills" aria-labelledby="skills-h">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="skills-h">
-            <span class="sec-num">03</span>
-            <span>Technical Skills</span>
-            <span class="sec-rule"></span>
-          </h2>
-          <p class="section-desc">Technologies, frameworks, and tools I use to design, develop, test, and deploy secure software.</p>
-        </div>
-        <dl class="skills-grid" id="skills-list"></dl>
-      </div>
-    </section>
-
-    <!-- Experience & Highlights Section -->
-    <section id="learning" aria-labelledby="learning-h">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="learning-h">
-            <span class="sec-num">04</span>
-            <span>Experience &amp; Highlights</span>
-            <span class="sec-rule"></span>
-          </h2>
-          <p class="section-desc">Practical engineering standards and architectural principles applied in all projects.</p>
-        </div>
-
-        <div class="highlights-grid">
-          <div class="highlight-box">
-            <h3>Modern Full-Stack Apps</h3>
-            <p>Component-driven UI with Next.js 14 App Router, Server Actions, shadcn/ui, responsive design, and Supabase PostgreSQL with real-time sync.</p>
-          </div>
-          <div class="highlight-box">
-            <h3>Rigorous Python Engineering</h3>
-            <p>Automated test suites with pytest, static type safety using mypy, lightning-fast linting with Ruff, and clean package dependency structures.</p>
-          </div>
-          <div class="highlight-box">
-            <h3>Concurrent Systems &amp; Networks</h3>
-            <p>Low-level socket programming, multi-threaded port scanning, network packet diagnostics, and columnar processing with Polars.</p>
-          </div>
-          <div class="highlight-box">
-            <h3>Applied Cryptography</h3>
-            <p>Authenticated encryption using Fernet (AES-128-CBC + HMAC-SHA256), cryptographic verification, and tamper detection before data extraction.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" aria-labelledby="contact-h">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="contact-h">
-            <span class="sec-num">05</span>
-            <span>Contact &amp; Connect</span>
-            <span class="sec-rule"></span>
-          </h2>
-          <p class="section-desc">Interested in discussing software engineering opportunities, cybersecurity roles, or project collaborations? Reach out anytime.</p>
-        </div>
-
-        <div class="contact-container">
-          <div>
-            <p style="font-size:1.1rem; color:var(--fg-bright); margin-bottom:1rem">
-              Let's build something fast, secure, and impactful together.
-            </p>
-            <p class="muted">
-              I am actively seeking software engineering internships, junior developer positions, and backend/full-stack opportunities.
-            </p>
-            <div style="margin-top:1.5rem">
-              <span class="status-pill" style="margin:0">
-                <span class="status-dot"></span>
-                <span>Bengaluru, India · Open to Remote</span>
-              </span>
-            </div>
-          </div>
-
-          <div class="contact-card-list">
-            <div class="contact-item">
-              <div class="contact-item-left">
-                <span class="contact-item-label">Email Address</span>
-                <a href="mailto:sharankumarrno@gmail.com" class="contact-item-val">sharankumarrno@gmail.com</a>
-              </div>
-              <button type="button" class="copy-btn copy-email-btn" aria-label="Copy Email">Copy</button>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-left">
-                <span class="contact-item-label">Phone / WhatsApp</span>
-                <a href="tel:+919663571484" class="contact-item-val">+91 96635 71484</a>
-              </div>
-              <button type="button" class="copy-btn copy-phone-btn" aria-label="Copy Phone">Copy</button>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-left">
-                <span class="contact-item-label">GitHub</span>
-                <a href="https://github.com/sharankumar-r" target="_blank" rel="noopener noreferrer" class="contact-item-val">github.com/sharankumar-r</a>
-              </div>
-              <a href="https://github.com/sharankumar-r" target="_blank" rel="noopener noreferrer" class="copy-btn">Visit ↗</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
+  <section id="about" aria-labelledby="about-h">
     <div class="wrap">
-      <div>
-        © <span id="year">2026</span> <strong>Sharan Kumar R</strong>. Built with semantic HTML, vanilla CSS &amp; JavaScript.
+      <h2 id="about-h">About</h2>
+      <p>Computer Science and Engineering student at MVJ College of Engineering with hands-on project experience in full-stack web development, Python automation, network diagnostics, and file security.</p>
+      <p>I have built a multi-format log analyzer, a concurrent TCP port scanner with a web dashboard, and a desktop file compression and encryption utility. I am interested in software engineering and cybersecurity roles involving backend development, networking, application security, and practical problem solving.</p>
+
+      <div class="edu">
+        <h3>Bachelor of Engineering, Computer Science and Engineering</h3>
+        <p class="meta">MVJ College of Engineering · Bengaluru, India · Expected May 2027</p>
+        <p class="muted"><strong style="color:var(--fg);font-weight:500">Relevant coursework:</strong> Data Structures and Algorithms, Database Management Systems, Computer Networks, Web Technologies, Operating Systems, Web Security Fundamentals.</p>
       </div>
-      <ul class="footer-nav">
-        <li><a href="#top">Back to Top ↑</a></li>
-        <li><a href="https://github.com/sharankumar-r" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">Technical Skills</h2>
+      <dl class="skills" id="skills-list"></dl>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h">Featured Projects</h2>
+      <div class="projects" id="projects-list"></div>
+    </div>
+  </section>
+
+  <section id="learning" aria-labelledby="learning-h">
+    <div class="wrap">
+      <h2 id="learning-h">Experience &amp; Learning Highlights</h2>
+      <ul class="highlights">
+        <li><h3>Hands-on project work</h3><p class="muted">Three self-directed projects spanning log analysis, network scanning, and applied cryptography.</p></li>
+        <li><h3>Engineering practices</h3><p class="muted">Tests with pytest, static type checking with mypy, linting with Ruff, and dependency management in Python projects.</p></li>
+        <li><h3>Networking &amp; security</h3><p class="muted">Socket programming, port scanning, network diagnostics, log analysis, and authenticated encryption.</p></li>
+        <li><h3>Full-stack fundamentals</h3><p class="muted">Responsive front ends in HTML, CSS, and JavaScript, backed by Python HTTP servers exposing JSON and REST endpoints.</p></li>
       </ul>
     </div>
-  </footer>
+  </section>
 
-  <noscript>
-    <div class="wrap" style="padding: 2rem 0;">
-      <p class="muted">Skills and dynamic features require JavaScript. Explore all source repositories directly on <a href="https://github.com/sharankumar-r" style="color:var(--accent)">GitHub: github.com/sharankumar-r</a>.</p>
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Get in Touch</h2>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="muted">Open to software engineering and cybersecurity opportunities. Send a message or reach out directly:</p>
+          <ul class="links">
+            <li><a href="mailto:sharankumarrno@gmail.com">sharankumarrno@gmail.com</a></li>
+            <li><a href="tel:+919663571484">+91 96635 71484</a></li>
+            <li><a href="https://github.com/sharankumar-r" rel="noopener">github.com/sharankumar-r</a></li>
+          </ul>
+          <p class="meta" style="margin-top:1.5rem">Bengaluru, India</p>
+        </div>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c12fb24e-2b68-4c49-a858-00ca944a3c13">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="form-btn">Submit</button>
+        </form>
+      </div>
     </div>
-  </noscript>
+  </section>
+</main>
 
-  <script src="script.js"></script>
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Sharan Kumar R</div>
+</footer>
+
+<noscript><div class="wrap" style="padding-bottom:2rem"><p class="muted">Skills and projects require JavaScript. See GitHub: <a href="https://github.com/sharankumar-r">github.com/sharankumar-r</a>.</p></div></noscript>
+
+<script>
+/* ---------- Content: edit here ---------- */
+const GITHUB = "https://github.com/sharankumar-r";
+
+const skills = [
+  ["Languages", ["Python", "C", "C++", "JavaScript"]],
+  ["Web Development", ["HTML5", "CSS3", "Responsive Web Design", "Web Architecture", "JavaScript"]],
+  ["Backend & APIs", ["Python", "HTTP Server", "REST APIs", "JSON"]],
+  ["Cybersecurity & Networking", ["TCP/IP", "Socket Programming", "Port Scanning", "Network Diagnostics", "Log Analysis", "Authenticated Encryption"]],
+  ["Libraries & Tools", ["Polars", "Typer", "Rich", "Tkinter", "cryptography", "zlib", "Git", "GitHub", "Linux Shell", "pytest", "mypy", "Ruff"]]
+];
+
+const projects = [
+  {
+    title: "Multi-Format Log Analyzer",
+    subtitle: "Python CLI for network log analysis",
+    points: [
+      "Parses and analyzes network logs from four vendor ecosystems (Palo Alto, Ubiquiti UniFi, WatchGuard, Cisco Meraki) with vendor-specific parsers for firewall events, system logs, and flow records.",
+      "Uses Polars transformations, aggregation, and chunked processing on large datasets; documented benchmarks include about 1,044,470 Meraki records in roughly 60 seconds.",
+      "Includes configurable noise detection, top IP analysis, and HTML and JSON report exports, backed by tests, type checking, linting, and dependency management."
+    ],
+    tech: ["Python", "Polars", "Rich", "mypy", "Ruff"],
+    url: GITHUB
+  },
+  {
+    title: "Port Scanner & Web Security Dashboard",
+    subtitle: "Concurrent TCP scanner with a browser-based diagnostic interface",
+    points: [
+      "Python TCP port scanner with configurable port ranges, socket timeouts, common service identification, and concurrent scanning using ThreadPoolExecutor.",
+      "Browser dashboard built with HTML, CSS, JavaScript, and Python's built-in HTTP server, exposing JSON endpoints for scan execution and status checks.",
+      "CLI and interactive modes, hostname/DNS resolution, progress reporting, and structured scan results."
+    ],
+    tech: ["Python", "TCP/IP", "Socket Programming", "ThreadPoolExecutor", "HTTP Server", "HTML5", "CSS3", "JavaScript", "JSON", "REST"],
+    url: GITHUB
+  },
+  {
+    title: "Files Compressor with Encryption",
+    subtitle: "Cross-platform file compression utility",
+    points: [
+      "Python desktop utility combining batch file archiving and zlib compression (level 9) with Fernet authenticated encryption in a custom container format.",
+      "Implements key generation, decryption, authentication and integrity checks, and guarded extraction that detects invalid keys or tampered data before restoring files.",
+      "Tkinter/ttk GUI with multi-file selection, progress feedback, destination path management, and cross-platform dialogs."
+    ],
+    tech: ["cryptography", "Fernet", "AES-128-CBC", "HMAC-SHA256", "zlib", "File I/O", "Tkinter"],
+    url: "https://github.com/sharankumar-r/Files-Encryption"
+  }
+];
+
+/* ---------- Rendering ---------- */
+const el = (tag, props = {}, children = []) => {
+  const n = Object.assign(document.createElement(tag), props);
+  [].concat(children).forEach(c => n.append(c));
+  return n;
+};
+
+document.getElementById("skills-list").append(
+  ...skills.flatMap(([group, items]) => [
+    el("div", {}, [el("dt", { textContent: group }), el("dd", {}, [el("ul", { className: "tags" }, items.map(t => el("li", { textContent: t })))])])
+  ])
+);
+
+const projectCard = p => el("article", { className: "card" }, [
+  el("h3", { textContent: p.title }),
+  el("p", { className: "sub", textContent: p.subtitle }),
+  el("ul", { className: "points" }, p.points.map(t => el("li", { textContent: t }))),
+  el("ul", { className: "tags", "aria-label": "Technologies" }, p.tech.map(t => el("li", { textContent: t }))),
+  el("a", { className: "repo", href: p.url, rel: "noopener", textContent: "View on GitHub →", ariaLabel: `${p.title} on GitHub` })
+]);
+
+document.getElementById("projects-list").append(...projects.map(projectCard));
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Decorative hero terminal */
+(async () => {
+  const out = document.getElementById("term-out");
+  const lines = [["p","$ whoami"],["","sharan-kumar-r"],["p","$ cat focus.txt"],["","full-stack development\ncybersecurity\nnetwork diagnostics"],["p","$ ls projects/"],["","log-analyzer  port-scanner  files-encryption"],["p","$ status"],["ok","[ok] open to opportunities"]];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const caret = el("span", { className: "caret" });
+  out.append(caret);
+  for (const [cls, text] of lines) {
+    const s = el("span", { className: cls });
+    out.insertBefore(s, caret);
+    if (cls === "p" && !reduce) { for (const ch of text) { s.textContent += ch; await sleep(35); } }
+    else s.textContent = text;
+    out.insertBefore(document.createTextNode("\n"), caret);
+    if (!reduce) await sleep(cls === "p" ? 250 : 400);
+  }
+})();
+</script>
 </body>
 </html>
